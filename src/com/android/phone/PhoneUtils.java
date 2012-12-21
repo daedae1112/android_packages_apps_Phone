@@ -2122,7 +2122,6 @@ public class PhoneUtils {
             recorder.setAudioSource(MediaRecorder.AudioSource.VOICE_RECOGNITION);
             recorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
             recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
-            recorder.setAudioEncodingBitRate(18000);
             recording = createRecordingTempFile(dirName);
             if (recording == null) {
                 recorder.release();
@@ -2140,7 +2139,7 @@ public class PhoneUtils {
                 recorder.start();
             } catch (IOException e) {
                 Log.e("PhoneUtils", "io problems while preparing [" +
-                        newRecordingName + "]: " + e.getMessage());
+                newRecordingName + "]: " + e.getMessage());
                 recorder.release();
                 recorder = null;
             }
